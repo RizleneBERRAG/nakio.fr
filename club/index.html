@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nakio · L’appli des clubs sportifs</title>
+    <meta name="description" content="Inscriptions en ligne, planning, appel, cotisations et lien avec les familles : Nakio réunit la vie du club dans une seule appli, pensée pour les bénévoles.">
+    <link rel="canonical" href="https://nakio.fr/club/">
+    <meta name="theme-color" content="#0A0A0B">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Nakio">
+    <meta property="og:title" content="Nakio · L’appli des clubs sportifs">
+    <meta property="og:description" content="Inscriptions en ligne, planning, appel, cotisations et lien avec les familles, dans une seule appli pensée pour les bénévoles.">
+    <meta property="og:url" content="https://nakio.fr/club/">
+    <meta property="og:image" content="https://nakio.fr/club/assets/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/club/assets/nakio-icone.svg" type="image/svg+xml">
+    <link rel="icon" href="/club/assets/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/club/assets/apple-touch-icon.png">
+    <link rel="preload" href="/club/assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/club/assets/fonts/inter-800.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/club/assets/styles.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Nakio",
+        "url": "https://nakio.fr/club/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "inLanguage": "fr",
+        "description": "L’appli des clubs sportifs : inscriptions en ligne, planning, appel, cotisations et lien avec les familles."
+    }
+    </script>
+    <script src="/club/assets/site.js"></script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="top" data-top>
+    <div class="wrap top__inner">
+        <a class="brand" href="/club/" aria-label="Nakio, accueil">
+            <img class="brand__mark" src="/club/assets/nakio-mark.svg" alt="" width="40" height="26">
+            <span class="brand__name">Nakio</span>
+        </a>
+        <nav class="nav" aria-label="Navigation principale">
+            <a href="#pour-qui">Pour qui</a>
+            <a href="#inscriptions">Inscriptions</a>
+            <a href="#fonctionnalites">Fonctionnalités</a>
+            <a href="#donnees">Données</a>
+            <a href="#questions">Questions</a>
+            <a class="btn btn--ink btn--sm nav__cta" href="#contact">Demander une démo</a>
+        </nav>
+        <button class="menu" type="button" aria-expanded="false" aria-controls="menu" data-menu>
+            <span class="menu__bar"></span><span class="menu__bar"></span>
+            <span class="sr">Menu</span>
+        </button>
+    </div>
+    <div class="drawer" id="menu" hidden data-drawer>
+        <a href="#pour-qui">Pour qui</a>
+        <a href="#inscriptions">Inscriptions</a>
+        <a href="#fonctionnalites">Fonctionnalités</a>
+        <a href="#donnees">Données</a>
+        <a href="#questions">Questions</a>
+        <a class="btn btn--ink" href="#contact">Demander une démo</a>
+    </div>
+</header>
+
+<main id="contenu">
+
+    <!-- L'ouverture : la promesse, et l'appli en vrai. -->
+    <section class="hero">
+        <div class="hero__dots" aria-hidden="true"></div>
+        <div class="hero__glow" aria-hidden="true"></div>
+        <div class="wrap hero__inner">
+            <div class="hero__text">
+                <p class="pill pill--dark reveal"><span class="pill__dot"></span>Pilote en cours avec un club de boxe</p>
+                <h1 class="hero__title reveal">Le club avance.<br><span class="gradient-text">Ensemble.</span></h1>
+                <p class="hero__lead reveal">Inscriptions en ligne, planning, appel, cotisations et lien avec les familles&nbsp;: Nakio réunit la vie du club dans une seule appli, pensée pour les bénévoles et simple pour les parents.</p>
+                <div class="hero__actions reveal">
+                    <a class="btn btn--light" href="#contact">Demander une démo</a>
+                    <a class="btn btn--ghost-light" href="#inscriptions">Voir l’appli en vrai</a>
+                </div>
+                <ul class="hero__proof reveal" aria-label="Nos engagements">
+                    <li>Données hébergées en France</li>
+                    <li>Aucune revente, aucune publicité</li>
+                    <li>Sur téléphone et ordinateur</li>
+                </ul>
+            </div>
+            <div class="hero__phones" aria-hidden="true">
+                <figure class="phone phone--back reveal">
+                    <img src="/club/assets/captures/famille.webp" alt="" width="390" height="844" loading="eager">
+                </figure>
+                <figure class="phone phone--front reveal">
+                    <img src="/club/assets/captures/accueil.webp" alt="" width="390" height="844" loading="eager" fetchpriority="high">
+                </figure>
+                <div class="chip chip--a reveal">
+                    <span class="chip__icon chip__icon--gradient"><svg viewBox="0 0 24 24"><path d="m6 12.5 4 4 8-9"/></svg></span>
+                    <span class="chip__text"><b>Dossier validé</b><span>Rayan · Boxe amateur</span></span>
+                </div>
+                <div class="chip chip--b reveal">
+                    <span class="chip__icon"><svg viewBox="0 0 24 24"><path d="M5 7h14M5 12h9M5 17h6"/><path d="m15 16.5 2 2 4-4"/></svg></span>
+                    <span class="chip__text"><b>Appel fait</b><span>Boxe éducative · 3 présents</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Les sports, en bandeau. -->
+    <div class="band" aria-label="Boxe, kick-boxing, judo, karaté, taekwondo, MMA, lutte, football, basket, handball, rugby, volley : Nakio s’adapte au sport du club.">
+        <div class="band__track" aria-hidden="true">
+            <span>Boxe</span><span>Kick-boxing</span><span>Judo</span><span>Karaté</span><span>Taekwondo</span><span>MMA</span><span>Lutte</span><span>Football</span><span>Basket</span><span>Handball</span><span>Rugby</span><span>Volley</span>
+            <span>Boxe</span><span>Kick-boxing</span><span>Judo</span><span>Karaté</span><span>Taekwondo</span><span>MMA</span><span>Lutte</span><span>Football</span><span>Basket</span><span>Handball</span><span>Rugby</span><span>Volley</span>
+        </div>
+    </div>
+
+    <!-- Pour qui : chacun son espace, selon son rôle. -->
+    <section class="section" id="pour-qui">
+        <div class="wrap">
+            <header class="section__head reveal">
+                <p class="eyebrow">Pour qui</p>
+                <h2 class="section__title">Chacun son espace, selon son rôle.</h2>
+                <p class="section__lead">Le bureau, les coachs et les familles ouvrent la même appli, mais chacun n’y voit que ce qui le concerne.</p>
+            </header>
+            <div class="roles">
+                <article class="card role reveal">
+                    <span class="role__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/></svg></span>
+                    <h3>Le bureau</h3>
+                    <ul class="dots">
+                        <li>Les dossiers d’inscription à valider</li>
+                        <li>Les adhérents, leurs licences et leurs groupes</li>
+                        <li>Les cotisations et le bilan de la saison</li>
+                    </ul>
+                </article>
+                <article class="card role reveal">
+                    <span class="role__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 7h14M5 12h9M5 17h6"/><path d="m15 16.5 2 2 4-4"/></svg></span>
+                    <h3>Les coachs</h3>
+                    <ul class="dots">
+                        <li>Les séances de la semaine, groupe par groupe</li>
+                        <li>L’appel en quelques secondes</li>
+                        <li>Les absences prévenues et les convocations</li>
+                    </ul>
+                </article>
+                <article class="card role reveal">
+                    <span class="role__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.4.1 4.3 1.7 4.9 4.8"/></svg></span>
+                    <h3>Les familles</h3>
+                    <ul class="dots">
+                        <li>Le dossier d’inscription sur le téléphone</li>
+                        <li>Les prochaines séances, une absence à prévenir</li>
+                        <li>Les convocations et la cotisation</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Le temps fort : les inscriptions en ligne. -->
+    <section class="section section--white" id="inscriptions">
+        <div class="wrap feature-wide">
+            <div class="feature-wide__text">
+                <p class="eyebrow reveal">Inscriptions en ligne</p>
+                <h2 class="section__title reveal">Des dossiers complets, sans papier à courir.</h2>
+                <p class="section__lead reveal">Les familles reçoivent le code du club et remplissent le dossier sur leur téléphone, en quelques minutes. Le bureau vérifie, valide, et la fiche de l’adhérent se crée sans ressaisie.</p>
+                <ol class="steps">
+                    <li class="reveal">
+                        <span class="steps__num">1</span>
+                        <div>
+                            <h3>La famille remplit</h3>
+                            <p>La fiche, la formule, le paiement prévu, la photo et l’assurance, l’autorisation parentale et le règlement du club, puis la signature.</p>
+                        </div>
+                    </li>
+                    <li class="reveal">
+                        <span class="steps__num">2</span>
+                        <div>
+                            <h3>Le bureau vérifie</h3>
+                            <p>Pièce par pièce. Une correction se demande en un message, et la famille est prévenue.</p>
+                        </div>
+                    </li>
+                    <li class="reveal">
+                        <span class="steps__num">3</span>
+                        <div>
+                            <h3>Prêt pour la licence</h3>
+                            <p>L’adhérent rejoint son groupe, sa cotisation est prête, et la licence se saisit dans l’outil de la fédération avec un dossier complet.</p>
+                        </div>
+                    </li>
+                </ol>
+                <p class="note reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="9.5" rx="2.5"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></svg>Le certificat médical et la pièce d’identité se montrent au club&nbsp;: Nakio ne les garde jamais.</p>
+            </div>
+            <div class="feature-wide__phones" aria-hidden="true">
+                <figure class="phone phone--tilt-left reveal">
+                    <img src="/club/assets/captures/dossier-famille.webp" alt="" width="390" height="844" loading="lazy">
+                </figure>
+                <figure class="phone phone--tilt-right reveal">
+                    <img src="/club/assets/captures/dossier-bureau.webp" alt="" width="390" height="844" loading="lazy">
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- Le quotidien du club, en mosaïque. -->
+    <section class="section" id="fonctionnalites">
+        <div class="wrap">
+            <header class="section__head reveal">
+                <p class="eyebrow">Au quotidien</p>
+                <h2 class="section__title">Tout ce qui fait tourner le club, au même endroit.</h2>
+            </header>
+
+            <div class="bento">
+                <article class="tile tile--wide reveal">
+                    <div class="tile__text">
+                        <h3>Le planning et l’appel</h3>
+                        <p>Les créneaux de la semaine, les gymnases, les séances ajoutées ou annulées. L’appel se fait en un geste depuis le bord du tapis, et les absences prévenues arrivent déjà notées.</p>
+                        <ul class="ticks">
+                            <li>Un planning par groupe et par lieu</li>
+                            <li>Les absences répétées signalées au coach</li>
+                        </ul>
+                    </div>
+                    <div class="tile__peek" aria-hidden="true">
+                        <figure class="phone"><img src="/club/assets/captures/seances.webp" alt="" width="390" height="844" loading="lazy"></figure>
+                    </div>
+                </article>
+
+                <article class="tile tile--narrow reveal">
+                    <div class="tile__text">
+                        <h3>Les cotisations, enfin claires</h3>
+                        <p>Ce qui est encaissé et ce qui reste à payer, en une ou plusieurs fois. Espèces, chèque, virement ou Pass’Sport.</p>
+                    </div>
+                    <div class="tile__peek" aria-hidden="true">
+                        <figure class="phone"><img src="/club/assets/captures/paiements.webp" alt="" width="390" height="844" loading="lazy"></figure>
+                    </div>
+                </article>
+
+                <article class="tile tile--narrow reveal">
+                    <div class="tile__text">
+                        <h3>Les adhérents et leurs licences</h3>
+                        <p>Une fiche par adhérent, ses groupes, ses responsables légaux et l’état de sa licence. On retrouve tout le monde en trois lettres.</p>
+                    </div>
+                    <div class="tile__peek" aria-hidden="true">
+                        <figure class="phone"><img src="/club/assets/captures/membres.webp" alt="" width="390" height="844" loading="lazy"></figure>
+                    </div>
+                </article>
+
+                <article class="tile tile--wide tile--dark tile--reverse reveal">
+                    <div class="tile__text">
+                        <h3>Les familles dans la boucle</h3>
+                        <p>Les parents voient les prochaines séances de leur enfant, préviennent d’une absence en deux touches et répondent aux convocations. Plus besoin de relancer par message.</p>
+                        <ul class="ticks ticks--light">
+                            <li>Plusieurs enfants dans un même compte</li>
+                            <li>Les notifications du club, au bon moment</li>
+                        </ul>
+                    </div>
+                    <div class="tile__peek" aria-hidden="true">
+                        <figure class="phone"><img src="/club/assets/captures/famille.webp" alt="" width="390" height="844" loading="lazy"></figure>
+                    </div>
+                </article>
+
+                <article class="tile tile--small reveal">
+                    <span class="tile__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M9 20h6"/></svg></span>
+                    <h3>Compétitions et résultats</h3>
+                    <p>Les convocations, les compositions d’équipe et les feuilles de match. La saison de chaque sportif tient en un écran.</p>
+                </article>
+                <article class="tile tile--small reveal">
+                    <span class="tile__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4h10a2 2 0 0 1 2 2v14l-3-2-3 2-3-2-3 2V6a2 2 0 0 1 2-2Z"/><path d="M9 9h6M9 13h4"/></svg></span>
+                    <h3>Le carnet du sportif</h3>
+                    <p>Ressenti, entraînements, objectifs&nbsp;: un carnet privé, partagé avec le coach seulement si le sportif le choisit.</p>
+                </article>
+                <article class="tile tile--small reveal">
+                    <span class="tile__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 19V11M12 19V5M19 19v-5"/></svg></span>
+                    <h3>Le bilan de la saison</h3>
+                    <p>Qui utilise l’appli, les appels faits, les dossiers validés&nbsp;: des chiffres prêts pour l’assemblée générale ou une subvention.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Démarrer. -->
+    <section class="section section--white" id="demarrer">
+        <div class="wrap">
+            <header class="section__head reveal">
+                <p class="eyebrow">Démarrer</p>
+                <h2 class="section__title">Prêt en trois étapes.</h2>
+                <p class="section__lead">Pas d’installation, pas de formation&nbsp;: Nakio s’ouvre dans le navigateur, sur téléphone comme sur ordinateur.</p>
+            </header>
+            <ol class="start">
+                <li class="reveal">
+                    <span class="start__num">1</span>
+                    <h3>Créez l’espace du club</h3>
+                    <p>Le nom, le sport, les groupes et les créneaux de la semaine.</p>
+                </li>
+                <li class="reveal">
+                    <span class="start__num">2</span>
+                    <h3>Invitez l’équipe</h3>
+                    <p>Le bureau et les coachs, chacun avec son rôle et ses droits.</p>
+                </li>
+                <li class="reveal">
+                    <span class="start__num">3</span>
+                    <h3>Ouvrez les inscriptions</h3>
+                    <p>Partagez le code du club aux familles&nbsp;: les dossiers arrivent dans l’appli.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- La confiance : les données. -->
+    <section class="section section--dark" id="donnees">
+        <div class="wrap">
+            <header class="section__head reveal">
+                <p class="eyebrow eyebrow--light">Données et sécurité</p>
+                <h2 class="section__title">Les données de vos adhérents, protégées.</h2>
+                <p class="section__lead">Un club gère souvent des données de mineurs. Nakio a été pensé pour ça dès le départ.</p>
+            </header>
+            <div class="trust">
+                <article class="trust__item reveal">
+                    <span class="trust__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="7" rx="2"/><rect x="4" y="13" width="16" height="7" rx="2"/><path d="M8 7.5h.01M8 16.5h.01"/></svg></span>
+                    <h3>Hébergées en France</h3>
+                    <p>Les données du club restent sur un serveur en France, sauvegardé chaque nuit.</p>
+                </article>
+                <article class="trust__item reveal">
+                    <span class="trust__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></svg></span>
+                    <h3>Chacun voit ce qui le concerne</h3>
+                    <p>Le bureau, les coachs et les familles ont chacun leur accès&nbsp;: une famille ne voit que ses enfants.</p>
+                </article>
+                <article class="trust__item reveal">
+                    <span class="trust__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V5h6v2M6.5 7l1 12.5h9L17.5 7"/></svg></span>
+                    <h3>Le minimum, puis on efface</h3>
+                    <p>Ni certificat médical ni pièce d’identité stockés. Les pièces envoyées sont effacées à la fin de la saison.</p>
+                </article>
+                <article class="trust__item reveal">
+                    <span class="trust__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19c3-1 4.5-6 7-6s2 4 4 4 3-2.5 5-3"/><path d="M4 5h9"/></svg></span>
+                    <h3>Des accords datés</h3>
+                    <p>Autorisations parentales datées, droit à l’image demandé à part, carnet partagé seulement avec un accord.</p>
+                </article>
+            </div>
+            <p class="trust__more reveal">Aucune revente, aucune publicité, aucun outil de suivi. <a href="/club/donnees-personnelles">Lire comment Nakio traite les données</a></p>
+        </div>
+    </section>
+
+    <!-- Le pilote et la personne derrière Nakio. -->
+    <section class="section" id="a-propos">
+        <div class="wrap about">
+            <div class="about__pilot card reveal">
+                <p class="eyebrow">Le pilote</p>
+                <h2 class="section__title section__title--sm">Construit avec un club, sur le terrain.</h2>
+                <p>Nakio est utilisé en pilote par un club de boxe pour la saison 2026-2027&nbsp;: inscriptions, planning, appel et cotisations. Chaque besoin du terrain devient une amélioration de l’appli.</p>
+            </div>
+            <div class="about__me card reveal">
+                <div class="about__mark" aria-hidden="true"><img src="/club/assets/nakio-mark.svg" alt="" width="56" height="36"></div>
+                <p class="eyebrow">Qui est derrière Nakio</p>
+                <h2 class="section__title section__title--sm">Rizlene Berrag, fondatrice et développeuse</h2>
+                <p>Je conçois et développe Nakio de bout en bout, avec un club pilote, pour que les bénévoles passent moins de temps sur les papiers et plus de temps avec leurs sportifs. Nakio, c’est aussi mon studio&nbsp;: des sites et des applis sur mesure pour les entreprises. <a href="/">Découvrir le studio</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Les questions qu'on nous pose. -->
+    <section class="section section--white" id="questions">
+        <div class="wrap faq">
+            <header class="faq__head reveal">
+                <p class="eyebrow">Questions</p>
+                <h2 class="section__title">Ce qu’on nous demande souvent.</h2>
+                <p class="section__lead">Une autre question&nbsp;? Écrivez-nous à <a href="mailto:contact@nakio.fr">contact@nakio.fr</a>.</p>
+            </header>
+            <div class="faq__list">
+                <details class="reveal">
+                    <summary>Faut-il installer quelque chose&nbsp;?</summary>
+                    <p>Non. Nakio s’ouvre dans le navigateur, sur téléphone comme sur ordinateur, et s’ajoute à l’écran d’accueil comme une appli.</p>
+                </details>
+                <details class="reveal">
+                    <summary>Les familles doivent-elles créer un compte&nbsp;?</summary>
+                    <p>Oui, avec le code que le club leur donne. En une minute, elles remplissent le dossier, suivent les séances de leur enfant et répondent aux convocations.</p>
+                </details>
+                <details class="reveal">
+                    <summary>Nakio marche-t-il pour mon sport&nbsp;?</summary>
+                    <p>Oui&nbsp;: sports de combat, sports collectifs ou autres. L’appli adapte son vocabulaire et ses feuilles de match au sport du club.</p>
+                </details>
+                <details class="reveal">
+                    <summary>Peut-on reprendre nos adhérents&nbsp;?</summary>
+                    <p>Oui. Un club de boxe importe le fichier des licences de l’extranet FFBoxe&nbsp;; sinon, les fiches se créent une par une, ou toutes seules avec le dossier d’inscription en ligne.</p>
+                </details>
+                <details class="reveal">
+                    <summary>Nakio remplace-t-il l’outil de licence de ma fédération&nbsp;?</summary>
+                    <p>Non. Nakio prépare un dossier complet&nbsp;; la licence se saisit toujours dans l’outil de votre fédération, par le club, comme aujourd’hui.</p>
+                </details>
+                <details class="reveal">
+                    <summary>Qui peut voir les données des enfants&nbsp;?</summary>
+                    <p>Le bureau du club, les coachs de leurs groupes et leur famille. Rien n’est vendu ni utilisé pour de la publicité.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- L'appel à l'action. -->
+    <section class="cta" id="contact">
+        <div class="wrap">
+            <div class="cta__inner reveal">
+                <img class="cta__mark" src="/club/assets/nakio-mark.svg" alt="" width="72" height="46">
+                <h2 class="cta__title">Faisons le tour de Nakio ensemble.</h2>
+                <p class="cta__lead">Une démo de 20 minutes, en visio ou au club, avec vos vraies questions.</p>
+                <div class="cta__actions">
+                    <a class="btn btn--light" href="mailto:contact@nakio.fr?subject=D%C3%A9mo%20Nakio">Demander une démo</a>
+                    <a class="btn btn--ghost-light" href="https://app.nakio.fr">Ouvrir l’appli</a>
+                </div>
+                <p class="cta__mail"><a href="mailto:contact@nakio.fr">contact@nakio.fr</a></p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="foot">
+    <div class="wrap">
+        <div class="foot__grid">
+            <div class="foot__brand">
+                <a class="brand brand--small" href="/club/" aria-label="Nakio, accueil">
+                    <img class="brand__mark" src="/club/assets/nakio-mark.svg" alt="" width="32" height="21">
+                    <span class="brand__name">Nakio</span>
+                </a>
+                <p>L’appli des clubs sportifs, pensée pour les bénévoles.</p>
+            </div>
+            <nav class="foot__col" aria-label="L’appli">
+                <p class="foot__title">L’appli</p>
+                <a href="#inscriptions">Inscriptions</a>
+                <a href="#fonctionnalites">Fonctionnalités</a>
+                <a href="#donnees">Données</a>
+                <a href="https://app.nakio.fr">Ouvrir l’appli</a>
+            </nav>
+            <nav class="foot__col" aria-label="Nakio">
+                <p class="foot__title">Nakio</p>
+                <a href="#a-propos">Qui est derrière</a>
+                <a href="/">Le studio Nakio</a>
+                <a href="#questions">Questions</a>
+                <a href="mailto:contact@nakio.fr">Contact</a>
+            </nav>
+            <nav class="foot__col" aria-label="Informations légales">
+                <p class="foot__title">Légal</p>
+                <a href="/mentions-legales">Mentions légales</a>
+                <a href="/club/donnees-personnelles">Données personnelles</a>
+            </nav>
+        </div>
+        <div class="foot__bottom">
+            <p>© <span data-year>2026</span> Nakio</p>
+            <p>Conçu et développé en France</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
