@@ -470,3 +470,55 @@ html.is-locked, html.is-locked body { overflow: hidden; }
     .shot, .work, .offer, .dock, .index__row { transition: none; }
     .viewer[open] { animation: none; }
 }
+
+/* ------------------------------------------------------------------ */
+/* Les pages par métier                                                */
+/* ------------------------------------------------------------------ */
+
+/* Les liens par métier, sous les offres de l'accueil. */
+.trades { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; margin-top: 36px; }
+.trades__label { font-size: 15px; font-weight: 600; color: var(--muted); }
+.trades a {
+    display: inline-flex; align-items: center; height: 42px; padding: 0 18px;
+    border: 1px solid var(--line); border-radius: 999px; background: #fff;
+    font-size: 15px; font-weight: 600; text-decoration: none;
+    transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+}
+.trades a:hover { border-color: var(--ink); background: var(--ink); color: #fff; }
+
+/* Le fil d'Ariane, dans l'ouverture sombre. */
+.crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 14px; color: var(--on-dark-muted); }
+.crumbs a { color: var(--on-dark); text-decoration: none; }
+.crumbs a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.hero--page .hero__title { font-size: clamp(40px, 6vw, 76px); }
+
+/* Les réalisations d'un métier : deux par ligne. */
+@media (min-width: 900px) { .works--even .work { grid-column: span 6; } }
+.tint-talya { --tint: #E5E9EC; }
+.tint-coeur-blanc { --tint: #EEEDEA; }
+.tint-berceau { --tint: #F5E8F0; }
+.tint-formulaire { --tint: #E7EBF1; }
+.tint-crle { --tint: #E9E9EC; }
+
+/* Les communes desservies. */
+.zones { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; max-width: 820px; margin: 0 auto; }
+.zones li { padding: 8px 16px; border-radius: 999px; background: #fff; box-shadow: var(--shadow); font-size: 15px; font-weight: 600; }
+.zones__note { margin-top: 22px; text-align: center; color: var(--muted); }
+.zones-block { margin-bottom: clamp(72px, 9vw, 112px); }
+
+/* Les autres métiers. */
+.others { display: grid; gap: 16px; }
+@media (min-width: 700px) { .others { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .others { grid-template-columns: repeat(4, 1fr); } }
+.other {
+    display: flex; flex-direction: column; gap: 8px; height: 100%;
+    padding: 26px 24px; text-decoration: none;
+    transition: translate 0.3s var(--ease), box-shadow 0.3s;
+}
+.other:hover { translate: 0 -4px; box-shadow: 0 1px 2px rgba(10, 10, 11, 0.04), 0 24px 48px rgba(10, 10, 11, 0.09); }
+.other__kicker { font-size: 14px; font-weight: 600; color: var(--accent-text); }
+.other b { font-size: 19px; font-weight: 800; letter-spacing: -0.025em; line-height: 1.2; }
+.other__go { margin-top: auto; padding-top: 10px; color: var(--muted); }
+.other:hover .other__go { color: var(--text); }
+
+.foot__brand p a, .foot__bottom a { color: inherit; text-underline-offset: 3px; }
