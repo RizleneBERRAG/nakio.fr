@@ -19,9 +19,11 @@
     <link rel="icon" href="/assets/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
     <link rel="preload" href="/club/assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/club/assets/fonts/inter-800.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/club/assets/fonts/inter-600.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/cormorant-garamond-italic.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/club/assets/styles.css">
     <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="stylesheet" href="/assets/luxe.css">
     <script type="application/ld+json">
 [
     {
@@ -99,9 +101,9 @@
             <span class="brand__name">Nakio</span>
         </a>
         <nav class="nav" aria-label="Navigation principale">
-            <a href="/#services">Services</a>
+            <a href="/#services">Expertises</a>
             <a href="/#realisations">Réalisations</a>
-            <a href="/#diagnostic">Comment ça marche</a>
+            <a href="/#diagnostic">Méthode</a>
             <a href="/conseils/">Conseils</a>
             <a href="/club/">L’appli Nakio</a>
             <a class="btn btn--ink btn--sm nav__cta" href="#contact">Diagnostic gratuit</a>
@@ -112,9 +114,9 @@
         </button>
     </div>
     <nav class="drawer" id="menu" hidden data-drawer aria-label="Menu">
-        <a href="/#services">Services</a>
+        <a href="/#services">Expertises</a>
         <a href="/#realisations">Réalisations</a>
-        <a href="/#diagnostic">Comment ça marche</a>
+        <a href="/#diagnostic">Méthode</a>
         <a href="/#questions">Questions</a>
         <a href="/conseils/">Conseils</a>
         <a href="/club/">L’appli Nakio</a>
@@ -146,46 +148,66 @@
         </div>
     </section>
 
-    <!-- Le contact : le diagnostic, par téléphone, WhatsApp ou e-mail. -->
-    <section class="section contact" id="contact">
+    <!-- Le contact : une phrase à compléter, et le message qui s'écrit en direct. -->
+    <section class="reach" id="contact">
         <div class="wrap">
-            <div class="contact__inner">
-                <div class="contact__text reveal">
-                    <img class="contact__mark" src="/assets/nakio-mark.svg" alt="" width="64" height="41">
-                    <h2 class="contact__title">Parlons de votre projet.</h2>
-                    <p class="contact__lead">Demandez votre diagnostic gratuit&nbsp;: je vous réponds personnellement.</p>
-                    <ul class="contact__ways">
-                        <li><a href="tel:+33650080442"><span class="contact__icon"><svg class="i"><use href="#i-call"/></svg></span><span><b>06 50 08 04 42</b><small>Appelez-moi</small></span></a></li>
-                        <li><a href="https://wa.me/33650080442?text=Bonjour%20Rizlene%2C%20j%E2%80%99aimerais%20un%20diagnostic%20gratuit%20pour%20mon%20projet." data-wa><span class="contact__icon contact__icon--wa"><svg class="i"><use href="#i-chat"/></svg></span><span><b>WhatsApp</b><small>Écrivez-moi en un message</small></span></a></li>
-                        <li><a href="mailto:contact@nakio.fr"><span class="contact__icon"><svg class="i"><use href="#i-mail"/></svg></span><span><b>contact@nakio.fr</b><small>Par e-mail</small></span></a></li>
-                    </ul>
-                </div>
+            <header class="reach__head reveal">
+                <p class="eyebrow">Contact</p>
+                <h2 class="reach__title">Parlons de votre <em>projet.</em></h2>
+                <p class="reach__lead">Complétez la phrase&nbsp;: votre message s’écrit tout seul, prêt à partir sur WhatsApp ou par e-mail. Je vous réponds personnellement.</p>
+            </header>
 
-                <form class="form reveal" data-form novalidate>
-                    <p class="form__title">Mon diagnostic gratuit</p>
-                    <fieldset class="form__kinds">
-                        <legend>Votre projet</legend>
-                        <label><input type="checkbox" name="projet" value="Site vitrine"><span>Site vitrine</span></label>
-                        <label><input type="checkbox" name="projet" value="Boutique en ligne"><span>Boutique en ligne</span></label>
-                        <label><input type="checkbox" name="projet" value="Appli ou logiciel"><span>Appli ou logiciel</span></label>
-                        <label><input type="checkbox" name="projet" value="Référencement et publicité"><span>Google &amp; publicité</span></label>
-                        <label><input type="checkbox" name="projet" value="Réseaux sociaux"><span>Réseaux sociaux</span></label>
-                        <label><input type="checkbox" name="projet" value="Formation et accompagnement"><span>Formation</span></label>
-                        <label><input type="checkbox" name="projet" value="Refonte d’un site"><span>Refonte</span></label>
-                    </fieldset>
-                    <div class="form__row">
-                        <label class="field"><span>Votre nom</span><input name="nom" autocomplete="name" required></label>
-                        <label class="field"><span>Téléphone ou e-mail</span><input name="contact" autocomplete="tel" required></label>
-                    </div>
-                    <label class="field"><span>Votre entreprise <em>facultatif</em></span><input name="entreprise" autocomplete="organization"></label>
-                    <label class="field"><span>Votre projet en quelques mots</span><textarea name="message" rows="4" required placeholder="Votre activité, votre site actuel s’il existe, ce que vous aimeriez…"></textarea></label>
+            <div class="reach__grid">
+                <form class="letter reveal" data-form novalidate>
+                    <p class="letter__text">
+                        Bonjour Rizlene, je m’appelle
+                        <label class="slot"><span class="sr">Votre nom</span><input name="nom" autocomplete="name" required placeholder="votre nom"></label>,
+                        de l’entreprise
+                        <label class="slot"><span class="sr">Votre entreprise, facultatif</span><input name="entreprise" autocomplete="organization" placeholder="facultatif"></label>.
+                        J’aimerais
+                        <label class="slot slot--select"><span class="sr">Votre projet</span><select name="projet">
+                            <option value="">choisir…</option>
+                            <option value="Site vitrine">un site vitrine</option>
+                            <option value="Boutique en ligne">une boutique en ligne</option>
+                            <option value="Appli ou logiciel">une appli ou un logiciel</option>
+                            <option value="Référencement et publicité">être mieux trouvé sur Google</option>
+                            <option value="Réseaux sociaux">faire vivre mes réseaux sociaux</option>
+                            <option value="Formation et accompagnement">être formé à mes outils</option>
+                            <option value="Refonte d’un site">refaire mon site actuel</option>
+                            <option value="À définir ensemble">en parler, je ne sais pas encore</option>
+                        </select></label>.
+                        Vous pouvez me joindre au
+                        <label class="slot"><span class="sr">Téléphone ou e-mail</span><input name="contact" autocomplete="tel" required placeholder="téléphone ou e-mail"></label>.
+                    </p>
+                    <label class="letter__more"><span>En quelques mots, votre projet</span><textarea name="message" rows="3" required placeholder="Votre activité, votre site actuel s’il existe, ce que vous aimeriez…"></textarea></label>
                     <p class="form__error" role="alert" hidden data-form-error></p>
-                    <div class="form__send">
-                        <button class="btn btn--wa" type="submit" value="whatsapp"><svg class="i"><use href="#i-chat"/></svg>Envoyer sur WhatsApp</button>
-                        <button class="btn btn--ink" type="submit" value="email"><svg class="i"><use href="#i-mail"/></svg>Envoyer par e-mail</button>
+                    <div class="letter__send">
+                        <button class="btn btn--ink" type="submit" value="whatsapp"><svg class="i"><use href="#i-chat"/></svg>Envoyer sur WhatsApp</button>
+                        <button class="btn btn--line" type="submit" value="email"><svg class="i"><use href="#i-mail"/></svg>Envoyer par e-mail</button>
                     </div>
-                    <p class="form__note">Votre message s’ouvre dans WhatsApp ou dans votre messagerie, prêt à partir. Rien n’est enregistré sur ce site.</p>
+                    <p class="letter__note">Votre message s’ouvre dans WhatsApp ou dans votre messagerie, prêt à partir. Rien n’est enregistré sur ce site.</p>
                 </form>
+
+                <aside class="preview reveal" aria-label="Me joindre directement">
+                    <div class="phone-ui" aria-hidden="true">
+                        <div class="phone-ui__screen">
+                            <div class="phone-ui__top">
+                                <span class="phone-ui__avatar"><img src="/assets/nakio-mark.svg" alt="" width="24" height="15"></span>
+                                <div><b>Rizlene · Nakio</b><small>Répond personnellement</small></div>
+                            </div>
+                            <div class="phone-ui__chat">
+                                <p class="bubble bubble--in">Bonjour&nbsp;! Parlez-moi de votre projet, je vous réponds dès que possible.</p>
+                                <p class="bubble bubble--out" data-preview-msg></p>
+                            </div>
+                            <p class="phone-ui__bar"><span>Votre message, prêt à partir</span><span class="phone-ui__send"><svg class="i"><use href="#i-arrow"/></svg></span></p>
+                        </div>
+                    </div>
+                    <ul class="ways">
+                        <li><a href="tel:+33650080442"><small>Par téléphone</small><b>06 50 08 04 42</b><svg class="i"><use href="#i-arrow"/></svg></a></li>
+                        <li><a href="mailto:contact@nakio.fr"><small>Par e-mail</small><b>contact@nakio.fr</b><svg class="i"><use href="#i-arrow"/></svg></a></li>
+                    </ul>
+                    <p class="reach__where">Mions, près de Lyon · du lundi au vendredi, de 9&nbsp;h à 18&nbsp;h</p>
+                </aside>
             </div>
         </div>
     </section>
@@ -204,9 +226,9 @@
             </div>
             <nav class="foot__col" aria-label="Le studio">
                 <p class="foot__title">Le studio</p>
-                <a href="/#services">Services</a>
+                <a href="/#services">Expertises</a>
                 <a href="/#realisations">Réalisations</a>
-                <a href="/#diagnostic">Comment ça marche</a>
+                <a href="/#diagnostic">Méthode</a>
                 <a href="/conseils/">Conseils</a>
             </nav>
             <nav class="foot__col" aria-label="Par métier">
@@ -227,6 +249,7 @@
                 <a href="https://www.facebook.com/nakio.fr" target="_blank" rel="noopener">Facebook</a>
             </nav>
         </div>
+        <p class="foot__word" aria-hidden="true">Nakio</p>
         <div class="foot__bottom">
             <p>© <span data-year>2026</span> Nakio · Rizlene Berrag, entreprise individuelle · SIRET 131 174 922 00016</p>
             <p><a href="/mentions-legales">Mentions légales</a> · <a href="/club/">L’appli Nakio</a> · Conçu et développé en France</p>
