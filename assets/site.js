@@ -1,5 +1,5 @@
 // Nakio · le studio : l'en-tête qui change de teinte selon le fond, le menu, les
-// apparitions, le grand titre qui monte mot à mot, la scène des réalisations qui
+// apparitions, la phrase d'ouverture qui change toute seule, la scène des réalisations qui
 // s'ouvre au défilement, la phrase qui s'allume, les cartes de projets qui s'empilent,
 // les étapes illustrées de la méthode, la bulle « Voir », la barre de contact sur
 // téléphone, le tri de tous les projets, la visionneuse et le formulaire, dont le
@@ -52,11 +52,34 @@ document.addEventListener('DOMContentLoaded', () => {
         return count;
     };
 
-    // Le grand titre de l'ouverture.
+    // Les grands titres des pages métiers : les mots montent un à un.
     document.querySelectorAll('[data-split]').forEach((title) => {
         if (!reduced) splitWords(title, true);
         title.classList.add('is-split');
     });
+
+    // L'ouverture de l'accueil : la fin de la phrase change toute seule, et les projets
+    // qui flottent autour suivent un peu la souris, chacun à sa profondeur.
+    const slot = document.querySelector('[data-slot]');
+    if (slot && !reduced) {
+        const endings = Array.from(slot.children);
+        let shown = 0;
+        setInterval(() => {
+            const leaving = endings[shown];
+            shown = (shown + 1) % endings.length;
+            leaving.classList.replace('is-on', 'is-gone');
+            endings[shown].classList.remove('is-gone');
+            endings[shown].classList.add('is-on');
+            setTimeout(() => leaving.classList.remove('is-gone'), 900);
+        }, 2400);
+    }
+    const float = document.querySelector('[data-float]');
+    if (float && fine && !reduced) {
+        window.addEventListener('pointermove', (event) => {
+            float.style.setProperty('--mx', ((event.clientX / window.innerWidth - 0.5) * -40).toFixed(1));
+            float.style.setProperty('--my', ((event.clientY / window.innerHeight - 0.5) * -30).toFixed(1));
+        }, { passive: true });
+    }
 
     // La phrase du manifeste : les mots s'allument au fil du défilement.
     const sentence = document.querySelector('[data-words]');

@@ -302,29 +302,56 @@ button.btn { font-family: inherit; cursor: pointer; }
 /* L'accueil                                                           */
 /* ================================================================== */
 
-/* L'ouverture : le grand titre, sur l'ivoire. */
+/* L'ouverture : centrée sur l'ivoire. La fin de la phrase change toute seule, et des
+   aperçus de projets flottent autour, chacun à sa profondeur (--z) pour suivre la souris. */
 .opening {
-    position: relative; overflow: hidden;
-    padding: calc(var(--header) + clamp(56px, 10vh, 120px)) 0 clamp(40px, 6vh, 72px);
+    position: relative; overflow: hidden; min-height: 100svh; display: grid; place-items: center;
+    padding: calc(var(--header) + 24px) 0 64px; text-align: center;
+    background: radial-gradient(45% 40% at 50% 52%, rgba(255, 255, 255, 0.7), transparent 75%), var(--bg);
 }
-.opening__inner { display: flex; flex-direction: column; gap: clamp(28px, 4.4vh, 48px); }
-.opening__status { display: inline-flex; align-items: center; gap: 12px; font-size: 14.5px; color: var(--muted); }
+.opening__float { position: absolute; inset: 0; pointer-events: none; }
+.opening__card {
+    position: absolute; left: var(--x); top: var(--y); width: var(--w); margin: 0;
+    aspect-ratio: 16 / 10; overflow: hidden; border-radius: 12px; background: var(--surface);
+    box-shadow: 0 0 0 1px rgba(13, 12, 11, 0.06), 0 30px 50px -26px rgba(13, 12, 11, 0.5);
+    transform: translate3d(calc(var(--mx, 0) * var(--z) * 1px), calc(var(--my, 0) * var(--z) * 1px), 0) rotate(var(--r));
+    transition: transform 0.9s var(--ease-out);
+    animation: card-in 1.2s var(--ease-out) both; animation-delay: calc(0.4s + var(--z) * 0.3s);
+}
+.opening__card--phone { aspect-ratio: 540 / 1169; border-radius: 16px; border: 4px solid var(--ink); }
+.opening__card img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.opening__card--phone img { animation: card-bob 7s ease-in-out infinite alternate; animation-delay: var(--d); }
+@keyframes card-in { from { opacity: 0; scale: 0.85; } }
+@keyframes card-bob { to { transform: translateY(-4%); } }
+
+.opening__inner { position: relative; display: flex; flex-direction: column; align-items: center; }
+.opening__kicker { font-family: var(--serif); font-style: italic; font-size: clamp(18px, 1.5vw, 22px); color: var(--muted); }
+.opening__title { margin-top: clamp(14px, 2.4vh, 24px); font-size: clamp(42px, 5.8vw, 98px); font-weight: 600; line-height: 1.02; letter-spacing: -0.05em; }
+.opening__fixed { display: block; }
+.opening__slot { position: relative; display: block; height: 1.2em; overflow: hidden; }
+.opening__slot span {
+    position: absolute; left: 0; right: 0; top: 0;
+    font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.12em; line-height: 1.05; letter-spacing: -0.02em; color: var(--accent);
+    transform: translateY(105%); opacity: 0;
+    transition: transform 0.9s var(--ease-out), opacity 0.6s;
+}
+.opening__slot span.is-on { transform: none; opacity: 1; }
+.opening__slot span.is-gone { transform: translateY(-105%); opacity: 0; }
+.opening__lead { max-width: 440px; margin-top: clamp(18px, 2.8vh, 28px); font-size: clamp(16px, 1.25vw, 18.5px); line-height: 1.6; color: var(--muted); }
+.opening__actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px 28px; margin-top: clamp(24px, 3.6vh, 36px); }
+@media (max-width: 899px) {
+    .opening__card { width: calc(var(--w) * 2.2); }
+    .opening__card:nth-child(2), .opening__card:nth-child(3), .opening__card:nth-child(6) { display: none; }
+    .opening__card:nth-child(1) { left: -10%; top: 9%; }
+    .opening__card:nth-child(4) { left: 72%; top: 8%; }
+    .opening__card:nth-child(5) { left: 80%; top: 78%; }
+}
+@media (min-width: 600px) and (max-width: 899px) {
+    .opening__card:nth-child(2) { display: block; left: 5%; top: 76%; }
+}
 .live { position: relative; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex: none; }
 .live::after { content: ''; position: absolute; inset: -5px; border-radius: 50%; border: 1px solid var(--accent); animation: live 2.6s var(--ease-out) infinite; }
 @keyframes live { 0% { transform: scale(0.4); opacity: 1; } 100% { transform: scale(1.6); opacity: 0; } }
-
-.opening__title {
-    font-size: clamp(46px, 8.3vw, 128px); font-weight: 600; line-height: 0.95; letter-spacing: -0.058em;
-}
-.opening__title em { font-size: 1.12em; }
-.opening__foot { display: grid; gap: 28px; padding-top: clamp(24px, 3.4vh, 36px); border-top: 1px solid var(--line); }
-.opening__lead { max-width: 580px; font-size: clamp(17px, 1.4vw, 19.5px); line-height: 1.6; color: var(--muted); }
-.opening__lead b { color: var(--text); font-weight: 500; }
-.opening__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 30px; }
-@media (min-width: 900px) {
-    .opening__foot { grid-template-columns: 1.2fr 1fr; align-items: end; }
-    .opening__actions { justify-content: flex-end; }
-}
 
 /* Le titre qui monte, mot à mot. */
 .js .split:not(.is-split) { opacity: 0; }
@@ -332,8 +359,8 @@ button.btn { font-family: inherit; cursor: pointer; }
 .split .w > span { display: inline-block; }
 .js .split .w > span { transform: translateY(105%); animation: rise 1.25s var(--ease-out) forwards; animation-delay: calc(var(--i, 0) * 55ms + 120ms); }
 @keyframes rise { to { transform: none; } }
-.js .opening .fade { opacity: 0; transform: translateY(14px); animation: fade-up 1.2s var(--ease-out) forwards; animation-delay: 0.7s; }
-.js .opening .fade--late { animation-delay: 0.9s; }
+.js .opening .fade { opacity: 0; transform: translateY(14px); animation: fade-up 1.2s var(--ease-out) forwards; animation-delay: 0.2s; }
+.js .opening .fade--late { animation-delay: 0.45s; }
 @keyframes fade-up { to { opacity: 1; transform: none; } }
 
 /* La scène : un mur de réalisations qui s'ouvre en grand. */
@@ -869,7 +896,8 @@ button.btn { font-family: inherit; cursor: pointer; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .wall__col, .clients__track, .live::after { animation: none; }
+    .wall__col, .clients__track, .live::after, .opening__card, .opening__card img { animation: none; }
+    .opening__card, .opening__slot span { transition: none; }
     .js .split .w > span, .js .opening .fade { animation: none; transform: none; opacity: 1; }
     .js .manifesto__text .w { opacity: 1; }
     .deck__phone, .xp__item h3, .xp__item::before, .tile-p, .tile-p__img > img, .nots li, .nots li span, .screen, .journey__step { transition: none; }

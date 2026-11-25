@@ -151,17 +151,28 @@
 
 <main id="contenu">
 
-    <!-- L'ouverture : une promesse, en grand, sur l'ivoire. -->
+    <!-- L'ouverture : la fin de la phrase change toute seule, et des projets flottent autour
+         (ils suivent un peu la souris, chacun à sa profondeur). -->
     <section class="opening" data-hero>
+        <div class="opening__float" data-float aria-hidden="true">
+            <figure class="opening__card" style="--x: 3%; --y: 14%; --w: 15vw; --r: -7deg; --z: 0.6; --d: 0s"><img src="/assets/work/climhero-s.webp" alt="" width="720" height="450" decoding="async"></figure>
+            <figure class="opening__card" style="--x: 8%; --y: 60%; --w: 12vw; --r: 5deg; --z: 1; --d: -2s"><img src="/assets/work/golden-s.webp" alt="" width="720" height="450" decoding="async"></figure>
+            <figure class="opening__card opening__card--phone" style="--x: 20%; --y: 74%; --w: 6.5vw; --r: -4deg; --z: 1.4; --d: -4s"><img src="/assets/work/wagyu-m.webp" alt="" width="540" height="1169" decoding="async"></figure>
+            <figure class="opening__card" style="--x: 79%; --y: 10%; --w: 14vw; --r: 6deg; --z: 0.8; --d: -1s"><img src="/assets/work/split-s.webp" alt="" width="720" height="450" decoding="async"></figure>
+            <figure class="opening__card opening__card--phone" style="--x: 72%; --y: 66%; --w: 6.5vw; --r: 7deg; --z: 1.3; --d: -3s"><img src="/assets/work/rg-plomberie-m.webp" alt="" width="540" height="1169" decoding="async"></figure>
+            <figure class="opening__card" style="--x: 83%; --y: 52%; --w: 13vw; --r: -5deg; --z: 0.7; --d: -5s"><img src="/assets/work/crafterlity-s.webp" alt="" width="720" height="450" decoding="async"></figure>
+        </div>
         <div class="wrap opening__inner">
-            <p class="opening__status fade"><span class="live" aria-hidden="true"></span>Disponible pour de nouveaux projets · Mions, près de Lyon, et partout en France</p>
-            <h1 class="opening__title split" data-split>Des sites qui donnent <em>envie</em> de vous faire confiance.</h1>
-            <div class="opening__foot fade fade--late">
-                <p class="opening__lead">Nakio conçoit des sites, des boutiques et des applis sur mesure pour les entreprises qui veulent être <b>choisies</b>, pas seulement trouvées. Design, développement, Google et réseaux sociaux&nbsp;: une seule interlocutrice, de l’idée à la mise en ligne.</p>
-                <div class="opening__actions">
-                    <a class="btn btn--ink" href="#contact">Mon diagnostic gratuit<svg class="i"><use href="#i-arrow"/></svg></a>
-                    <a class="link" href="https://wa.me/33650080442?text=Bonjour%20Rizlene%2C%20j%E2%80%99aimerais%20un%20diagnostic%20gratuit%20pour%20mon%20projet." data-wa><svg class="i"><use href="#i-chat"/></svg>Écrire sur WhatsApp</a>
-                </div>
+            <p class="opening__kicker fade">Nakio · studio web près de Lyon</p>
+            <h1 class="opening__title fade">
+                <span class="sr">Un site qui donne envie de vous appeler, de vous choisir, de revenir et de vous recommander.</span>
+                <span class="opening__fixed" aria-hidden="true">Un site qui donne envie</span>
+                <span class="opening__slot" data-slot aria-hidden="true"><span class="is-on">de vous appeler.</span><span>de vous choisir.</span><span>de revenir.</span><span>de vous recommander.</span></span>
+            </h1>
+            <p class="opening__lead fade fade--late">Sites, boutiques et applis sur mesure. Une seule interlocutrice, de l’idée à la mise en ligne.</p>
+            <div class="opening__actions fade fade--late">
+                <a class="btn btn--ink" href="#contact">Mon diagnostic gratuit<svg class="i"><use href="#i-arrow"/></svg></a>
+                <a class="link" href="#realisations">Voir les réalisations</a>
             </div>
         </div>
     </section>
