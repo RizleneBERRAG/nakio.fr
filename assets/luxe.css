@@ -285,7 +285,8 @@ button.btn { font-family: inherit; cursor: pointer; }
 .foot__word + .foot__bottom { margin-top: 0; }
 
 /* Les contacts et les réseaux : de fins traits clairs dans un cercle discret ; au survol,
-   le cercle se remplit de la couleur de la marque (--c, un dégradé pour Instagram). */
+   le cercle se remplit d'un dégradé à la couleur de la marque (--c : un ton clair en haut,
+   la couleur, un ton profond en bas), avec un léger reflet par-dessus (::after). */
 .foot__brand { max-width: 340px; }
 .socials { display: flex; flex-wrap: wrap; gap: 9px; margin: 8px 0 0; padding: 0; list-style: none; }
 .social {
@@ -299,17 +300,24 @@ button.btn { font-family: inherit; cursor: pointer; }
     content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: var(--c);
     opacity: 0; transform: scale(0.5); transition: opacity 0.35s, transform 0.5s var(--ease-out);
 }
+.social::after {
+    content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit; pointer-events: none;
+    background: radial-gradient(120% 70% at 30% 0%, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0) 55%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), inset 0 -10px 18px rgba(0, 0, 0, 0.18);
+    opacity: 0; transition: opacity 0.35s;
+}
 .social:hover, .social:focus-visible { color: #fff; box-shadow: inset 0 0 0 1px transparent; }
 .social:hover::before, .social:focus-visible::before { opacity: 1; transform: none; }
+.social:hover::after, .social:focus-visible::after { opacity: 1; }
 .social:focus-visible { outline: 2px solid var(--on-dark); outline-offset: 3px; }
 .social svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .social svg .fill { fill: currentColor; stroke: none; }
-.social--tel { --c: #34C759; }
-.social--mail { --c: var(--accent); }
-.social--wa { --c: #25D366; }
-.social--ig { --c: radial-gradient(circle at 30% 107%, #FDF497 0%, #FDF497 5%, #FD5949 45%, #D6249F 60%, #285AEB 90%); }
-.social--fb { --c: #1877F2; }
-.social--in { --c: #0A66C2; }
+.social--tel { --c: linear-gradient(140deg, #6EE7A8 0%, #22B573 48%, #0B6B47 100%); }
+.social--mail { --c: linear-gradient(140deg, #FFC48A 0%, #FF6A2B 48%, #B8330C 100%); }
+.social--wa { --c: linear-gradient(140deg, #7AF0A6 0%, #25D366 45%, #0E7A64 100%); }
+.social--ig { --c: linear-gradient(40deg, #FFD776 0%, #F77737 28%, #E1306C 55%, #A12DBB 78%, #5B3FD9 100%); }
+.social--fb { --c: linear-gradient(140deg, #7DB8FF 0%, #1877F2 50%, #0A3F99 100%); }
+.social--in { --c: linear-gradient(140deg, #6FB3EA 0%, #0A66C2 52%, #053A73 100%); }
 .foot__inner .socials { margin: 0; }
 
 /* ------------------------------------------------------------------ */
