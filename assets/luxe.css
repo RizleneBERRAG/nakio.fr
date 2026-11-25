@@ -319,7 +319,7 @@ button.btn { font-family: inherit; cursor: pointer; }
 }
 .opening__float { position: absolute; inset: 0; pointer-events: none; }
 .opening__card {
-    position: absolute; left: var(--x); top: var(--y); width: var(--w); margin: 0;
+    position: absolute; left: var(--x); top: max(var(--y), calc(var(--header) + 28px)); width: var(--w); margin: 0;
     aspect-ratio: 16 / 10; overflow: hidden; border-radius: 12px; background: var(--surface);
     box-shadow: 0 0 0 1px rgba(13, 12, 11, 0.06), 0 30px 50px -26px rgba(13, 12, 11, 0.5);
     transform: translate3d(calc(var(--mx, 0) * var(--z) * 1px), calc(var(--my, 0) * var(--z) * 1px), 0) rotate(var(--r));
@@ -350,15 +350,22 @@ button.btn { font-family: inherit; cursor: pointer; }
 .opening__slot span.is-gone { transform: translateY(-105%); opacity: 0; }
 .opening__lead { max-width: 440px; margin-top: clamp(18px, 2.8vh, 28px); font-size: clamp(16px, 1.25vw, 18.5px); line-height: 1.6; color: var(--muted); }
 .opening__actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px 28px; margin-top: clamp(24px, 3.6vh, 36px); }
+/* Téléphone et tablette : les deux aperçus du haut se posent sous le menu, avec de l'air,
+   et le texte commence en dessous d'eux (26vw ≈ leur hauteur, inclinaison comprise). */
 @media (max-width: 899px) {
+    .opening { padding-top: calc(var(--header) + 40px + 26vw); }
     .opening__card { width: calc(var(--w) * 2.2); }
     .opening__card:nth-child(2), .opening__card:nth-child(3), .opening__card:nth-child(6) { display: none; }
-    .opening__card:nth-child(1) { left: -10%; top: 9%; }
-    .opening__card:nth-child(4) { left: 72%; top: 8%; }
-    .opening__card:nth-child(5) { left: 80%; top: 78%; }
+    .opening__card:nth-child(1) { left: -9%; top: calc(var(--header) + 26px); }
+    .opening__card:nth-child(4) { left: 71%; top: calc(var(--header) + 20px); }
+    .opening__card:nth-child(5) { left: 80%; top: auto; bottom: 2%; }
+}
+/* Sur téléphone, pas de place sous les boutons : seuls les deux aperçus du haut restent. */
+@media (max-width: 599px) {
+    .opening__card:nth-child(5) { display: none; }
 }
 @media (min-width: 600px) and (max-width: 899px) {
-    .opening__card:nth-child(2) { display: block; left: 5%; top: 76%; }
+    .opening__card:nth-child(2) { display: block; left: 5%; top: auto; bottom: 2%; }
 }
 .live { position: relative; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex: none; }
 .live::after { content: ''; position: absolute; inset: -5px; border-radius: 50%; border: 1px solid var(--accent); animation: live 2.6s var(--ease-out) infinite; }
