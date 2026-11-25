@@ -284,6 +284,34 @@ button.btn { font-family: inherit; cursor: pointer; }
 }
 .foot__word + .foot__bottom { margin-top: 0; }
 
+/* Les contacts et les réseaux : de fins traits clairs dans un cercle discret ; au survol,
+   le cercle se remplit de la couleur de la marque (--c, un dégradé pour Instagram). */
+.foot__brand { max-width: 340px; }
+.socials { display: flex; flex-wrap: wrap; gap: 9px; margin: 8px 0 0; padding: 0; list-style: none; }
+.social {
+    position: relative; isolation: isolate; display: grid; place-items: center;
+    width: 44px; height: 44px; border-radius: 50%; overflow: hidden;
+    color: rgba(244, 241, 234, 0.78); text-decoration: none;
+    box-shadow: inset 0 0 0 1px rgba(244, 241, 234, 0.18);
+    transition: color 0.3s, box-shadow 0.3s;
+}
+.social::before {
+    content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: var(--c);
+    opacity: 0; transform: scale(0.5); transition: opacity 0.35s, transform 0.5s var(--ease-out);
+}
+.social:hover, .social:focus-visible { color: #fff; box-shadow: inset 0 0 0 1px transparent; }
+.social:hover::before, .social:focus-visible::before { opacity: 1; transform: none; }
+.social:focus-visible { outline: 2px solid var(--on-dark); outline-offset: 3px; }
+.social svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.social svg .fill { fill: currentColor; stroke: none; }
+.social--tel { --c: #34C759; }
+.social--mail { --c: var(--accent); }
+.social--wa { --c: #25D366; }
+.social--ig { --c: radial-gradient(circle at 30% 107%, #FDF497 0%, #FDF497 5%, #FD5949 45%, #D6249F 60%, #285AEB 90%); }
+.social--fb { --c: #1877F2; }
+.social--in { --c: #0A66C2; }
+.foot__inner .socials { margin: 0; }
+
 /* ------------------------------------------------------------------ */
 /* Barre de contact du téléphone, visionneuse                          */
 /* ------------------------------------------------------------------ */
