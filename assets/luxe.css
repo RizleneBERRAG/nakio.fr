@@ -967,3 +967,30 @@ button.btn { font-family: inherit; cursor: pointer; }
     .is-on .mock__browser { animation: none; --cut: 40%; }
     .tile-p.is-back { animation: none; }
 }
+
+/* ================================================================== */
+/* L'appli des clubs (/club/), dans la ligne du studio                 */
+/* (les pages de l'appli chargent luxe.css et portent body.club)       */
+/* ================================================================== */
+
+/* « Ensemble. » en italique corail sur le fond sombre de l'ouverture. */
+.club .hero__title .gradient-text { color: var(--accent); }
+
+/* Les sports en bandeau : en italique, comme les clients du studio. */
+.club .band { padding: 30px 0; background: var(--bg); border-bottom: 1px solid var(--line); }
+.club .band__track span {
+    gap: 44px; padding-right: 44px; color: var(--text);
+    font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(28px, 3.2vw, 46px); letter-spacing: -0.01em;
+}
+.club .band__track span::after { width: 7px; height: 7px; border-radius: 0; background: var(--accent); transform: rotate(45deg); }
+
+/* Prêt en trois étapes : les chiffres en italique, sans couleurs vives. */
+.club .start li .start__num {
+    font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 68px; letter-spacing: -0.02em;
+    color: var(--text); font-variant-numeric: lining-nums;
+}
+
+/* L'appel final : l'encre du studio, son grain et une lueur corail. */
+.club .cta__inner { border-radius: 32px; }
+.club .cta__inner::before { background: radial-gradient(42% 55% at 50% 18%, rgba(255, 90, 31, 0.24), transparent 70%); }
+.club .cta__inner::after { background-image: var(--grain); background-size: 180px; opacity: 0.07; -webkit-mask-image: none; mask-image: none; }
